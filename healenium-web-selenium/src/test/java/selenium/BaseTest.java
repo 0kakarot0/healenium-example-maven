@@ -22,7 +22,7 @@ public class BaseTest {
     static public void setUp() {
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability("browserName", "chrome");
-      capabilities.setCapability("browserVersion", "90.0");
+      capabilities.setCapability("browserVersion", "94.0");
       capabilities.setCapability("enableVNC", true);
 
       RemoteWebDriver delegate = null;
