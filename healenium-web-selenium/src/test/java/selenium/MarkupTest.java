@@ -63,27 +63,27 @@ public class MarkupTest extends BaseTest {
         assertTrue(result, "The locator was not healed");
     }
 
-    @Test
-    @Severity(SeverityLevel.NORMAL)
-    @Description("Select checkboxes with findElements annotation")
-    public void testSelectCheckboxes() {
-        MainPage mainPage = new MainPage(driver);
-        mainPage.open();
-
-        while (!mainPage.displayedText())
-            mainPage.generateMarkup();
-
-        int selectCount = mainPage.selectAllCheckboxes(); //find via findElements
-
-        int verifiedCount = mainPage.verifyAllCheckboxesChecked();
-        Assertions.assertEquals(selectCount, verifiedCount,
-                "All checkboxes were checked");
-
-        selectCount = mainPage.selectAllCheckboxes(); // should be healed and unchecked
-        verifiedCount = mainPage.verifyAllCheckboxesUnchecked();
-        Assertions.assertEquals(selectCount, verifiedCount,
-                "The same number of locator for checkbox with findElements has been healed");
-    }
+//    @Test
+//    @Severity(SeverityLevel.NORMAL)
+//    @Description("Select checkboxes with findElements annotation")
+//    public void testSelectCheckboxes() {
+//        MainPage mainPage = new MainPage(driver);
+//        mainPage.open();
+//
+//        while (!mainPage.displayedText())
+//            mainPage.generateMarkup();
+//
+//        int selectCount = mainPage.selectAllCheckboxes(); //find via findElements
+//
+//        int verifiedCount = mainPage.verifyAllCheckboxesChecked();
+//        Assertions.assertEquals(selectCount, verifiedCount,
+//                "All checkboxes were checked");
+//
+//        selectCount = mainPage.selectAllCheckboxes(); // should be healed and unchecked
+//        verifiedCount = mainPage.verifyAllCheckboxesUnchecked();
+//        Assertions.assertEquals(selectCount, verifiedCount,
+//                "The same number of locator for checkbox with findElements has been healed");
+//    }
 
     @Test
     @Severity(SeverityLevel.NORMAL)
@@ -124,20 +124,20 @@ public class MarkupTest extends BaseTest {
         assertTrue(result, "Verify first account checkbox unchecked");
     }
 
-    @Test
-    @Severity(SeverityLevel.MINOR)
-    @Description("Select and verify several inputs via parent.findElement")
-    public void testSelectElementsUnderParent() {
-        MainPage mainPage = new MainPage(driver);
-        mainPage.open()
-                .generateMarkup();
-
-        while (!mainPage.groupInputEnabled())
-            mainPage.generateMarkup();
-
-        // find all locator and fill them. verify their values
-        mainPage.verifyInputText(); //no healing
-        mainPage.fillInputsGroup();
-        mainPage.verifyInputText(); //should be healed
-    }
+//    @Test
+//    @Severity(SeverityLevel.MINOR)
+//    @Description("Select and verify several inputs via parent.findElement")
+//    public void testSelectElementsUnderParent() {
+//        MainPage mainPage = new MainPage(driver);
+//        mainPage.open()
+//                .generateMarkup();
+//
+//        while (!mainPage.groupInputEnabled())
+//            mainPage.generateMarkup();
+//
+//        // find all locator and fill them. verify their values
+//        mainPage.verifyInputText(); //no healing
+//        mainPage.fillInputsGroup();
+//        mainPage.verifyInputText(); //should be healed
+//    }
 }

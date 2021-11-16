@@ -25,7 +25,7 @@ public class MainPage extends BasePage {
     By checkboxUnchecked = By.xpath("//label[not(contains(@class,'checkbox_checked'))]");
 
     By parentInput = By.xpath("//*[contains(@class,'input-group') and @role='group']//span[@class='input__box']");
-    By childInput = By.xpath(".//[@value='']");
+    By childInput = By.xpath(".//*[@value='']");
 
 
     public MainPage(SelfHealingDriver driver) {
